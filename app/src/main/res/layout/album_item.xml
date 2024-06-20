@@ -1,13 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="album"
+            type="com.northcoders.recordshopapp.model.Album" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+ >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/album_image"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/doughnut" />
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/album_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="@{album.name}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                    <TextView
+                        android:id="@+id/artist_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="@{album.artist}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                    <TextView
+                        android:id="@+id/genre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="@{album.genre}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                    <TextView
+                        android:id="@+id/album_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="@{album.description}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>
