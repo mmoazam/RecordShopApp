@@ -12,6 +12,12 @@ public class Album extends BaseObservable {
     private String artist;
     private String genre;
     private int releaseYear;
+    private int stockLevel;
+
+    @Bindable
+    public int getStockLevel() {
+        return stockLevel;
+    }
 
     @Bindable
     public int getId() {
@@ -72,6 +78,13 @@ public class Album extends BaseObservable {
         this.releaseYear = releaseYear;
         notifyPropertyChanged(BR.releaseYear);
     }
+
+    public void setStockLevel(int stockLevel) {
+        this.stockLevel = stockLevel;
+        notifyPropertyChanged(BR.stockLevel);
+    }
+
+
 
     public Album() {
     }
