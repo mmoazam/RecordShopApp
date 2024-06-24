@@ -22,9 +22,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     Context context;
     RecyclerViewInterface recyclerViewInterface;
 
-    public AlbumAdapter(List<Album> albumList, Context context) {
+    public AlbumAdapter(List<Album> albumList, Context context, RecyclerViewInterface recyclerViewInterface) {
         this.albumList = albumList;
         this.context = context;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
 
     @NonNull
