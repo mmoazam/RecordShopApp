@@ -8,6 +8,7 @@
         <variable
             name="album"
             type="com.northcoders.recordshopapp.model.Album" />
+
         <variable
             name="handlers"
             type="com.northcoders.recordshopapp.ui.addalbum.AddNewAlbumClickHandlers" />
@@ -23,13 +24,13 @@
             android:id="@+id/album_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@={album.name}"
-            android:hint="Album Name"
             android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="1dp"
-            android:textSize="20sp"
+            android:hint="Album Name"
             android:inputType="text"
+            android:text="@={album.name}"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,12 +39,12 @@
             android:id="@+id/artist_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
-            android:text="@={album.artist}"
+            android:layout_marginEnd="1dp"
             android:hint="Artist Name"
             android:inputType="text"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="1dp"
+            android:text="@={album.artist}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,12 +54,12 @@
             android:id="@+id/album_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
-            android:text="@={album.description}"
+            android:layout_marginEnd="1dp"
             android:hint="Album description"
             android:inputType="text"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="1dp"
+            android:text="@={album.description}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,12 +69,12 @@
             android:id="@+id/album_genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
-            android:text="@={album.genre}"
+            android:layout_marginEnd="1dp"
             android:hint="Album genre"
             android:inputType="text"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="1dp"
+            android:text="@={album.genre}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +84,12 @@
             android:id="@+id/album_release_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
-            android:text="@={album.genre}"
+            android:layout_marginEnd="1dp"
             android:hint="Album release year"
             android:inputType="number"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="1dp"
+            android:text="@={album.genre}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,7 +105,5 @@
             app:layout_constraintTop_toBottomOf="@+id/album_release_year" />
 
 
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </layout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
