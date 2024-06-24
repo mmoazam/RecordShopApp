@@ -6,6 +6,7 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.BindingAdapter;
 
 import com.northcoders.recordshopapp.BR;
 
@@ -140,6 +141,8 @@ public class Album extends BaseObservable implements Parcelable {
         dest.writeInt(releaseYear);
         dest.writeInt(stockLevel);
     }
+
+
 }
 
 
