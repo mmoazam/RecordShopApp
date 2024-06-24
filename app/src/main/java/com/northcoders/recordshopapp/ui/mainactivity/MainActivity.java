@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
 
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
-    private RecyclerView recyclerView;
-    private AlbumAdapter albumAdapter;
     private ArrayList<Album> albumList;
     MainActivityClickHandler clickHandler;
     private static final String ALBUM_KEY = "album";
@@ -57,14 +55,15 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
     }
 
     private void displayAlbumsInRecyclerView() {
-        recyclerView = binding.recyclerView;
-        albumAdapter = new AlbumAdapter(albumList, this, this);
+        RecyclerView recyclerView = binding.recyclerView;
+        AlbumAdapter albumAdapter = new AlbumAdapter(albumList, this, this);
         recyclerView.setAdapter(albumAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         albumAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void onItemClicked(int position) {

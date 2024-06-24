@@ -32,9 +32,10 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     @NotNull
     @Override
     public AlbumViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup viewGroup, int i) {
-        return new AlbumViewHolder(AlbumItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup,false),
-                recyclerViewInterface);
+        AlbumItemBinding binding = AlbumItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup, false);
+        return new AlbumViewHolder(binding, recyclerViewInterface);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull AlbumViewHolder holder, int position) {
@@ -46,6 +47,7 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     public int getItemCount() {
         return albumList.size();
     }
+
 
     public static class AlbumViewHolder extends RecyclerView.ViewHolder {
 
