@@ -32,7 +32,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     @NotNull
     @Override
     public AlbumViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup viewGroup, int i) {
-        return new AlbumViewHolder(AlbumItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup, false));
+        return new AlbumViewHolder(AlbumItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup,false),
+                recyclerViewInterface);
     }
 
     @Override
@@ -50,9 +51,21 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
 
         AlbumItemBinding albumItemBinding;
 
-        public AlbumViewHolder(AlbumItemBinding albumItemBinding) {
+        public AlbumViewHolder(AlbumItemBinding albumItemBinding, RecyclerViewInterface recyclerViewInterface) {
             super(albumItemBinding.getRoot());
             this.albumItemBinding = albumItemBinding;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (recyclerViewInterface != null){
+                        int position = getAdapterPosition();
+                        if (getAdapterPosition() != RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClicked(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
