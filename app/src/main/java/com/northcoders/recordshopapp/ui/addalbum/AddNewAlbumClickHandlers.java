@@ -12,12 +12,12 @@ import com.northcoders.recordshopapp.ui.mainactivity.MainActivityViewModel;
 public class AddNewAlbumClickHandlers {
     private Album album;
     private Context context;
-    private MainActivityViewModel mainActivityViewModel;
+    private MainActivityViewModel viewModel;
 
     public AddNewAlbumClickHandlers(Album album, Context context, MainActivityViewModel mainActivityViewModel) {
         this.album = album;
         this.context = context;
-        this.mainActivityViewModel = mainActivityViewModel;
+        this.viewModel = mainActivityViewModel;
     }
 
     public void onSubmitButtonClick(View view) {
@@ -27,7 +27,7 @@ public class AddNewAlbumClickHandlers {
                 album.getDescription().isEmpty() ||
                 album.getReleaseYear() < 1900 ||
                 album.getStockLevel() < 0) {
-            Toast.makeText(context, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Please fill in all fields correctly", Toast.LENGTH_SHORT).show();
         } else {
             Intent intent = new Intent(context, MainActivity.class);
 
@@ -40,7 +40,7 @@ public class AddNewAlbumClickHandlers {
                     album.getReleaseYear(),
                     album.getStockLevel());
 
-            mainActivityViewModel.addAlbum(newAlbum);
+            viewModel.addAlbum(newAlbum);
 
             context.startActivity(intent);
         }
