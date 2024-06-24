@@ -132,17 +132,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSubmit" />
 
-        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--            android:onclick="@{handlers.onBackButtonClicked}"-->
-        <!--            android:id="@+id/floatingActionButton"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="32dp"-->
-        <!--            android:clickable="true"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@+id/buttonDelete"-->
-        <!--            app:srcCompat="@android:drawable/ic_menu_revert" />-->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:onClick="@{handlers::onBackButtonClicked}"
+            android:text="Back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDelete"
+            app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
