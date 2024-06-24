@@ -66,7 +66,7 @@ public class AlbumRepository {
         });
     }
 
-    public void updateBook(Long id, Album album) {
+    public void updateAlbum(Long id, Album album) {
         AlbumApiService albumApiService = RetrofitInstance.getService();
         Call<Album> call = albumApiService.updateAlbum(id, album);
 
@@ -87,7 +87,7 @@ public class AlbumRepository {
         }); // end of callback
     } // end of updateBook
 
-    public void deleteBook(Long id){
+    public void deleteAlbum(Long id){
         AlbumApiService albumApiService = RetrofitInstance.getService();
         Call<String> call = albumApiService.deleteAlbum(id);
 
