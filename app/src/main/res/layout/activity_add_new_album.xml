@@ -29,6 +29,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
             android:textSize="20sp"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,6 +41,7 @@
             android:layout_marginTop="4dp"
             android:text="@={album.artist}"
             android:hint="Artist Name"
+            android:inputType="text"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
             android:textSize="20sp"
@@ -54,6 +56,7 @@
             android:layout_marginTop="4dp"
             android:text="@={album.description}"
             android:hint="Album description"
+            android:inputType="text"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
             android:textSize="20sp"
@@ -68,6 +71,7 @@
             android:layout_marginTop="4dp"
             android:text="@={album.genre}"
             android:hint="Album genre"
+            android:inputType="text"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
             android:textSize="20sp"
@@ -82,6 +86,7 @@
             android:layout_marginTop="4dp"
             android:text="@={album.genre}"
             android:hint="Album release year"
+            android:inputType="number"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="1dp"
             android:textSize="20sp"
@@ -90,7 +95,7 @@
             app:layout_constraintTop_toBottomOf="@+id/album_genre" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
