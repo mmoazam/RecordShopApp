@@ -16,7 +16,7 @@ import com.northcoders.recordshopapp.model.Album;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RecyclerViewInterface {
 
     private ActivityMainBinding binding;
     private MainActivityViewModel viewModel;
@@ -61,5 +61,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         albumAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+
     }
 }
