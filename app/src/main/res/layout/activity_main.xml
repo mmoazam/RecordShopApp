@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="album"
             type="com.northcoders.recordshopapp.model.Album" />
@@ -36,5 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imageHeader" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

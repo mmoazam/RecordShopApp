@@ -12,11 +12,13 @@ import com.northcoders.recordshopapp.R;
 import com.northcoders.recordshopapp.databinding.AlbumItemBinding;
 import com.northcoders.recordshopapp.model.Album;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder> {
 
-    private List<Album> albumList;
+    List<Album> albumList;
     Context context;
 
     public AlbumAdapter(List<Album> albumList, Context context) {
@@ -25,17 +27,14 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     }
 
     @NonNull
+    @NotNull
     @Override
-    public AlbumViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater
-                .from(viewGroup.getContext())
-                .inflate(R.layout.album_item, viewGroup, false);
-
-        return new AlbumViewHolder(view, AlbumItemBinding.bind(view));
+    public AlbumViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup viewGroup, int i) {
+        return new AlbumViewHolder(AlbumItemBinding.inflate(LayoutInflater.from(viewGroup.getContext()), viewGroup, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AlbumViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull AlbumViewHolder holder, int position) {
         Album album = albumList.get(position);
         holder.albumItemBinding.setAlbum(album);
     }
@@ -47,9 +46,9 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
 
     public static class AlbumViewHolder extends RecyclerView.ViewHolder {
 
-        private AlbumItemBinding albumItemBinding;
+        AlbumItemBinding albumItemBinding;
 
-        public AlbumViewHolder(@NonNull View itemView, AlbumItemBinding albumItemBinding) {
+        public AlbumViewHolder(AlbumItemBinding albumItemBinding) {
             super(albumItemBinding.getRoot());
             this.albumItemBinding = albumItemBinding;
         }

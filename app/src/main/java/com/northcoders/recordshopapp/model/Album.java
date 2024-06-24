@@ -89,13 +89,14 @@ public class Album extends BaseObservable {
     public Album() {
     }
 
-    public Album(int id, String name, String description, String artist, String genre, int releaseYear) {
+    public Album(int id, String name, String description, String artist, String genre, int releaseYear, int stockLevel) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.artist = artist;
         this.genre = genre;
         this.releaseYear = releaseYear;
+        this.stockLevel = stockLevel;
     }
 }
 

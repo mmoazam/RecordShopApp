@@ -2,25 +2,69 @@ package com.northcoders.recordshopapp.ui.addalbum;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.northcoders.recordshopapp.R;
+import com.northcoders.recordshopapp.databinding.ActivityAddNewAlbumBinding;
+import com.northcoders.recordshopapp.model.Album;
+import com.northcoders.recordshopapp.ui.mainactivity.MainActivityViewModel;
 
 public class AddNewAlbumActivity extends AppCompatActivity {
+
+     Album album;
+     ActivityAddNewAlbumBinding binding;
+     MainActivityViewModel viewModel;
+     AddNewAlbumClickHandlers handlers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_new_album);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        album = new Album();
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_new_album);
+
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
+        handlers = new AddNewAlbumClickHandlers(album, this, viewModel);
+
+        binding.setHandlers(handlers);
+        binding.setAlbum(album);
     }
 }
+
+//package com.northcoders.recordshopapp.ui.addalbum;
+//
+//import androidx.appcompat.app.AppCompatActivity;
+//import android.os.Bundle;
+//import androidx.databinding.DataBindingUtil;
+//import androidx.lifecycle.ViewModelProvider;
+//import com.northcoders.recordshopapp.R;
+//import com.northcoders.recordshopapp.databinding.ActivityAddNewAlbumBinding;
+//import com.northcoders.recordshopapp.model.Album;
+//import com.northcoders.recordshopapp.ui.addalbum.AddNewAlbumClickHandlers;
+//import com.northcoders.recordshopapp.ui.mainactivity.MainActivityViewModel;
+//
+//public class AddNewAlbumActivity extends AppCompatActivity {
+//
+//    ActivityAddNewAlbumBinding binding;
+//    MainActivityViewModel model;
+//    AddNewAlbumClickHandlers clickHandlers;
+//    Album album;
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_add_new_album);
+//
+//        album = new Album();
+//        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_new_album);
+//        model = new ViewModelProvider(this).get(MainActivityViewModel.class);
+//        clickHandlers = new AddNewAlbumClickHandlers(album, this, model);
+//        binding.setHandlers(clickHandlers);
+//        binding.setAlbum(album);
+//
+//    }
+//}

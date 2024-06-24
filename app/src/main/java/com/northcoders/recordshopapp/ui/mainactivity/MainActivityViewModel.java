@@ -2,7 +2,6 @@ package com.northcoders.recordshopapp.ui.mainactivity;
 
 import android.app.Application;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,22 +9,24 @@ import androidx.lifecycle.MutableLiveData;
 import com.northcoders.recordshopapp.model.Album;
 import com.northcoders.recordshopapp.model.AlbumRepository;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class MainActivityViewModel extends AndroidViewModel {
 
-    private AlbumRepository albumRepository;
+    AlbumRepository albumRepository;
 
-    public MainActivityViewModel(@NonNull Application application) {
+    public MainActivityViewModel(@NotNull Application application) {
         super(application);
         this.albumRepository = new AlbumRepository(application);
     }
 
-//    public MutableLiveData<List<Album>> getMutableLiveData() {
-//        return albumRepository.getMutableLiveData();
-//    }
+    public MutableLiveData<List<Album>> getMutableLiveData() {
+        return albumRepository.getMutableLiveData();
+    }
 
-    public LiveData<List<Album>> getallAlbums() {
+    public LiveData<List<Album>> getAllAlbums() {
         return albumRepository.getMutableLiveData();
     }
 
