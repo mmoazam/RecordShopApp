@@ -1,11 +1,15 @@
 package com.northcoders.recordshopapp.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 
 import com.northcoders.recordshopapp.BR;
 
-public class Album extends BaseObservable {
+public class Album extends BaseObservable implements Parcelable {
     private int id;
     private String name;
     private String description;
@@ -13,6 +17,28 @@ public class Album extends BaseObservable {
     private String genre;
     private int releaseYear;
     private int stockLevel;
+
+    protected Album(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        description = in.readString();
+        artist = in.readString();
+        genre = in.readString();
+        releaseYear = in.readInt();
+        stockLevel = in.readInt();
+    }
+
+    public static final Creator<Album> CREATOR = new Creator<Album>() {
+        @Override
+        public Album createFromParcel(Parcel in) {
+            return new Album(in);
+        }
+
+        @Override
+        public Album[] newArray(int size) {
+            return new Album[size];
+        }
+    };
 
     @Bindable
     public int getStockLevel() {
@@ -97,6 +123,22 @@ public class Album extends BaseObservable {
         this.genre = genre;
         this.releaseYear = releaseYear;
         this.stockLevel = stockLevel;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeString(artist);
+        dest.writeString(genre);
+        dest.writeInt(releaseYear);
+        dest.writeInt(stockLevel);
     }
 }
 
