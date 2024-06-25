@@ -22,9 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-
-
-            android:queryHint="Search title.."
+            android:background="@drawable/search_view_bg"
+            app:queryHint="Search title.."
             app:layout_constraintBottom_toTopOf="@id/imageHeader"
 
             app:layout_constraintTop_toTopOf="parent"
