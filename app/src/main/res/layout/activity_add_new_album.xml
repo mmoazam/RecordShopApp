@@ -89,35 +89,54 @@
             android:layout_marginEnd="1dp"
             android:hint="Album release year"
             android:inputType="number"
-            android:text="@={album.genre}"
+            android:text="@={album.releaseYear}"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/album_genre" />
 
-        <Button
-            android:onClick="@{handlers::onSubmitButtonClick}"
-            android:id="@+id/buttonSubmit"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/album_stock_level"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="1dp"
+            android:hint="Album stock level"
+            android:inputType="number"
+            android:text="@={album.stockLevel}"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/album_release_year" />
 
+        <Button
+            android:id="@+id/buttonSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="@{handlers::onSubmitButtonClick}"
+            android:text="Submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/album_stock_level" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:onClick="@{handlers::onBackButtonClick}"
             android:id="@+id/floatingActionButtonBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="28dp"
             android:layout_marginTop="193dp"
+            android:layout_marginEnd="75dp"
             android:clickable="true"
+            android:onClick="@{handlers::onBackButtonClick}"
             android:text="back"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSubmit"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.616"
+            app:layout_constraintVertical_bias="0.315"
             app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
