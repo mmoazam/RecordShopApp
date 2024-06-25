@@ -37,9 +37,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewInter
                 R.layout.activity_main
         );
 
+        clickHandler = new MainActivityClickHandler(this);
+        binding.setHandlers(clickHandler);
+
         viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
-        clickHandler = new MainActivityClickHandler(this);
 
         getAllAlbums();
     }
