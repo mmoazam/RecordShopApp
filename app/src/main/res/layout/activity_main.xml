@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="handlers"
             type="com.northcoders.recordshopapp.ui.mainactivity.MainActivityClickHandler" />
@@ -23,10 +24,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:background="@drawable/search_view_bg"
-            app:queryHint="Search title.."
             app:layout_constraintBottom_toTopOf="@id/imageHeader"
-
             app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="Search title.."
             tools:layout_editor_absoluteX="24dp" />
 
         <ImageView
@@ -52,11 +52,11 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButtonAddAlbum"
-            android:onClick="@{handlers::addAlbumButtonClick}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="371dp"
             android:layout_marginBottom="32dp"
+            android:onClick="@{handlers::addAlbumButtonClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/recyclerView"
