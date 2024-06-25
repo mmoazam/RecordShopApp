@@ -3,6 +3,18 @@
     <style name="Base.Theme.RecordShopApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
+        <item name="android:textColorSecondary">@color/colorTextSecondary</item>
+        <item name="colorButtonNormal">@color/colorButton</item>
+        <item name="android:textColor">@color/colorButtonText</item>
+        <!-- Floating Action Button colors -->
+
     </style>
 
     <style name="Theme.RecordShopApp" parent="Base.Theme.RecordShopApp" />

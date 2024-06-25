@@ -3,5 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ricky_beige">#FDFCED</color>">
+    <color name="colorPrimary">#ff5722</color>
+    <color name="colorPrimaryDark">#e64a19</color>
+    <color name="colorAccent">#ffc107</color>
+    <color name="colorBackground">#ffffff</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorButton">#ff9800</color>
+    <color name="colorButtonText">#070707</color>
+    <color name="colorFABBackground">#ff9800</color> <!-- Background color of the FAB -->
+    <color name="colorFABIcon">#ffffff</color> <!-- Icon color of the FAB -->
+
 
 </resources>

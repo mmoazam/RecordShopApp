@@ -18,6 +18,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:context=".ui.addalbum.AddNewAlbumActivity">
 
         <EditText
@@ -132,6 +133,7 @@
             android:layout_marginTop="193dp"
             android:layout_marginEnd="75dp"
             android:clickable="true"
+            app:backgroundTint="@color/colorFABBackground"
             android:onClick="@{handlers::onBackButtonClick}"
             android:text="back"
             app:layout_constraintBottom_toBottomOf="parent"
