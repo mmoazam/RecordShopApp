@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FDFCED"
+        android:background="@color/ricky_beige"
         tools:context=".ui.mainactivity.MainActivity">
 
 
