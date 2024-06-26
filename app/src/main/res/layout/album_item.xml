@@ -77,14 +77,52 @@
                         android:text="@{album.description}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-                    <TextView
-                        android:id="@+id/album_stock_level"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginTop="10dp"
-                        android:text="@{Integer.toString(album.stockLevel)}"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_release_year"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:text="Released"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/album_release_year"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="34dp"
+                            android:text="@{Integer.toString(album.releaseYear)}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textViewStocklevel"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:text="Stock Level"
+                            android:textSize="19sp" />
+
+                        <TextView
+                            android:id="@+id/album_stock_level"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="200dp"
+                            android:layout_height="34dp"
+                            android:text="@{Integer.toString(album.stockLevel)}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+                    </LinearLayout>
 
                 </LinearLayout>
 
